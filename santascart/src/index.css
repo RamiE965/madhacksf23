@@ -1,13 +1,73 @@
-body {
+html, body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  text-align: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+/* Navbar */
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav .nav-button {
+  color:rgba(222,109,46,255);
+  background-color: #fff;
+  font-size: 15px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  margin: 10px;
+  cursor: pointer;
+}
+
+nav .nav-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+nav .logo-container {
+  width: 170px;
+  margin: 15px;
+
+}
+
+nav .logo-container .logo {
+  width: 100%;
+}
+
+nav .button-container {
+  margin: 30px;
+}
+
+/* Home */
+
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  
+  background: linear-gradient(
+      to bottom, 
+      rgb(222,109,46) 10%, 
+      rgb(255, 255, 255) 110%
+  )
+}
+
+.home {
+  margin-top: 30vh;
+}
+
+.slogan {
+  
+  font-size: 90px;
+  color: white;
+}
+
+.jingle {
+  letter-spacing: 0.2em;
+  font-style: italic;
 }
