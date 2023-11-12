@@ -7,6 +7,7 @@ import sys
 import requests
 import json
 
+
 # ## TEMP:
 # # When creating new alerts based on front-end info
 # from .tasks import check_price_drop_task
@@ -21,15 +22,19 @@ import json
 # Create your views here.
 def query(request):
     # variables for the search query
-    minPrice, maxPrice = 0, 0
-    maxItems = 0
-    category = ""
+    userInput = ""
+    # minPrice, maxPrice = 0, 0
+    # maxItems = 0
+    # category = ""
+    if request.method == "POST":
+        form = request
+        print(form)
     
     # set up the request parameters
     params = {
     'api_key': os.environ.get('TARGETAPI'),
     'type': 'search',
-    'search_term': 'Playstation 5',
+    'search_term': userInput,
     'sort_by': 'best_match'
     }
 
