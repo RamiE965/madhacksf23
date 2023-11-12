@@ -1,42 +1,62 @@
 [
     {
+        "Name": "PlayStation 5 Console Final Fantasy XVI Bundle",
+        "Price": 559.99,
+        "Image": "https://target.scene7.com/is/image/Target/GUEST_71994902-a76a-4241-b245-3b3c1c10b37c",
+        "TCIN ": "89152599"
+    },
+    {
         "Name": "PlayStation 5 Digital Edition Console",
         "Price": 399.99,
-        "Image": "https://target.scene7.com/is/image/Target/GUEST_1a432cb4-e8c1-4a02-8fd2-31131a152beb"
+        "Image": "https://target.scene7.com/is/image/Target/GUEST_1a432cb4-e8c1-4a02-8fd2-31131a152beb",
+        "TCIN ": "87716465"
     },
     {
         "Name": "PlayStation 5 God of War Ragnarok Console with Wireless Controller",
         "Price": 559.99,
-        "Image": "https://target.scene7.com/is/image/Target/GUEST_224eb8d4-90f8-4fbb-a5d7-c54ab8a517bf"
+        "Image": "https://target.scene7.com/is/image/Target/GUEST_224eb8d4-90f8-4fbb-a5d7-c54ab8a517bf",
+        "TCIN ": "87800909"
     },
     {
         "Name": "MLB The Show 23 - PlayStation 5",
         "Price": 49.99,
-        "Image": "https://target.scene7.com/is/image/Target/GUEST_da2466ba-266c-4040-9af4-1d02ba8f4746"
+        "Image": "https://target.scene7.com/is/image/Target/GUEST_da2466ba-266c-4040-9af4-1d02ba8f4746",
+        "TCIN ": "88538715"
+    },
+    {
+        "Name": "Madden NFL 24 - PlayStation 5",
+        "Price": 69.99,
+        "Image": "https://target.scene7.com/is/image/Target/GUEST_24276690-658f-4030-b756-63ab94e6aa76",
+        "TCIN ": "89243374"
     },
     {
         "Name": "DualSense Wireless Controller for PlayStation 5 - Midnight Black",
         "Price": 49.49,
-        "Image": "https://target.scene7.com/is/image/Target/GUEST_a834749f-9074-4993-943f-b227f43cf3f3"
-    },
-    {
-        "Name": "Sony Pulse 3D Bluetooth Wireless Gaming headset for PlayStation 5 - Midnight Black",
-        "Price": 99.99,
-        "Image": "https://target.scene7.com/is/image/Target/GUEST_96b8836d-11b3-4dbb-9a94-cfcf78e0a41e"
+        "Image": "https://target.scene7.com/is/image/Target/GUEST_a834749f-9074-4993-943f-b227f43cf3f3",
+        "TCIN ": "83374958"
     },
     {
         "Name": "PlayStation 5 Digital Console Horizon Forbidden West Bundle",
         "Price": 429.99,
-        "Image": "https://target.scene7.com/is/image/Target/GUEST_526b7311-4a20-49cb-ad6c-b40dfc437fce"
+        "Image": "https://target.scene7.com/is/image/Target/GUEST_526b7311-4a20-49cb-ad6c-b40dfc437fce",
+        "TCIN ": "86660923"
     },
     {
         "Name": "Marvel&#39;s Spider-Man 2 Standard Edition - PlayStation 5",
         "Price": 69.99,
-        "Image": "https://target.scene7.com/is/image/Target/GUEST_dd3c708b-e984-48ff-99b4-b576067b783b"
+        "Image": "https://target.scene7.com/is/image/Target/GUEST_dd3c708b-e984-48ff-99b4-b576067b783b",
+        "TCIN ": "89383183"
+    },
+    {
+        "Name": "Final Fantasy XVI - PlayStation 5",
+        "Price": 61.99,
+        "Image": "https://target.scene7.com/is/image/Target/GUEST_b59b9743-a044-4ed5-a606-629401b7ba96",
+        "TCIN ": "88183537"
     },
     {
         "Name": "Gran Turismo 7 - PlayStation 5",
         "Price": 69.99,
-        "Image": "https://target.scene7.com/is/image/Target/GUEST_9596b64c-3704-4d3a-ad0f-a7f1003cca3d"
+        "Image": "https://target.scene7.com/is/image/Target/GUEST_9596b64c-3704-4d3a-ad0f-a7f1003cca3d",
+        "TCIN ": "84648621"
     }
 ]

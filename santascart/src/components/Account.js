@@ -1,24 +1,24 @@
-import {useState} from 'react'
+import { useState } from 'react'
 
 const Account = ({ setShowAcc }) => {
 
-    const [ email, setEmail ] = useState(null)
-    const [ password, setPassword ] = useState(null)
-    const [ confirmPassword, setConfirmPassword ] = useState(null)
-    const [ error, setError ] = useState(null)
-    
-    const handleClick = ( ) => {
+    const [email, setEmail] = useState(null)
+    const [password, setPassword] = useState(null)
+    const [confirmPassword, setConfirmPassword] = useState(null)
+    const [error, setError] = useState(null)
+
+    const handleClick = () => {
         setShowAcc(false)
     }
-    
+
     return (
         <div className="auth">
             <div className="x-icon" onClick={handleClick}>X</div>
-            
-            
+
+
             <h2>{'CREATE ACCOUNT'}</h2>
             <form>
-                <input 
+                <input
                     type="email"
                     id="email"
                     name="email"
@@ -27,7 +27,7 @@ const Account = ({ setShowAcc }) => {
                     onChange={(e) => setEmail(e.target.value)}
                 />
 
-                <input 
+                <input
                     type="password"
                     id="password"
                     name="password"
@@ -36,7 +36,7 @@ const Account = ({ setShowAcc }) => {
                     onChange={(e) => setPassword(e.target.value)}
                 />
 
-                <input 
+                <input
                     type="password"
                     id="password-check"
                     name="password-check"
@@ -48,7 +48,7 @@ const Account = ({ setShowAcc }) => {
                 <input className="secondary-button" type="submit" />
                 <p>{error}</p>
             </form>
-            
+
         </div>
     )
 }
