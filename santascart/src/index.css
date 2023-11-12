@@ -53,7 +53,7 @@ nav .button-container {
   background: linear-gradient(
       to bottom, 
       rgb(222,109,46) 10%, 
-      rgb(255, 255, 255) 110%
+      rgb(255, 255, 255) 115%
   )
 }
 
@@ -70,6 +70,28 @@ nav .button-container {
 .jingle {
   letter-spacing: 0.2em;
   font-style: italic;
+}
+
+.main-mission {
+  color:white;
+}
+
+.start-button {
+  margin: 70px;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 25px;
+  background: linear-gradient(45deg, rgb(228,131,79), rgb(222,109,46));
+  padding: 12px 30px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+.start-button:hover {
+  background: linear-gradient(260deg, rgb(228,131,79), rgb(222,109,46));
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 /* Auth */
