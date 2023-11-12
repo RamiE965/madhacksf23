@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('query/', views.query, name='query'),
     path('test/', views.test, name='test_email'),
+    path('create-alert/', views.create_price_alert, name='create_alert'),
 ]
