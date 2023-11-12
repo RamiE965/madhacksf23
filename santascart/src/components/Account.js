@@ -6,18 +6,31 @@ const Account = ({ setShowAcc }) => {
     const [ password, setPassword ] = useState(null)
     const [ confirmPassword, setConfirmPassword ] = useState(null)
     const [ error, setError ] = useState(null)
+
+    const [signIn, setSignIn] = useState(true);
+    const authToken = true
     
     const handleClick = ( ) => {
         setShowAcc(false)
     }
+
+    const signChange = () => {
+        setSignIn((prevSignIn) => !prevSignIn);
+    };
     
     return (
         <div className="auth">
             <div className="x-icon" onClick={handleClick}>X</div>
             
-            
-            <h2>{'CREATE ACCOUNT'}</h2>
+            {authToken ? (
+                <form>
+                    <br></br>
+                    <button className="logout">
+                    logout
+                    </button>
+                </form>) : (
             <form>
+                <h2>{signIn ? 'ACCOUNT DETAILS' : 'CREATE ACCOUNT'}</h2>
                 <input 
                     type="email"
                     id="email"
@@ -45,9 +58,21 @@ const Account = ({ setShowAcc }) => {
                     onChange={(e) => setConfirmPassword(e.target.value)}
                 />
 
-                <input className="secondary-button" type="submit" />
+                <input 
+                className="secondary-button" 
+                type="submit" 
+                value={signIn ? 'Log in' : 'Submit'}
+                />
+
+                <button className="sign-in-up" onClick={signChange}>
+                    {signIn ? 'Sign Up!' : 'Sign In!'}
+                </button>
+
+
                 <p>{error}</p>
-            </form>
+            
+            </form> 
+            )}
             
         </div>
     )

@@ -109,9 +109,13 @@ nav .button-container {
   border-radius: 10px;
   padding: 40px;
   text-align: center;
+  font-size: 20px;
+  color: black;
 }
 
 .auth .x-icon {
+  color: black;
+  font-size: 15px;
   border: 1px solid black;
   border-radius: 20px;
   padding: 5px;
@@ -139,6 +143,34 @@ nav .button-container {
 }
 
 .secondary-button {
+  color: rgb(222,109,46);
+  background-color: #fff;
+  font-weight: 500px;
+  font-size: 15px;
+  text-transform: uppercase;
+  padding: 12px 30px;
+  border-radius: 30px;
+  border: solid 2px rgb(222,109,46);
+  margin: 6px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+.sign-in-up {
+  color: rgb(222,109,46);
+  background-color: #fff;
+  font-weight: 500px;
+  font-size: 15px;
+  text-transform: uppercase;
+  padding: 12px 30px;
+  border-radius: 30px;
+  border: solid 2px rgb(222,109,46);
+  margin: 6px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+.logout {
   color: rgb(222,109,46);
   background-color: #fff;
   font-weight: 500px;

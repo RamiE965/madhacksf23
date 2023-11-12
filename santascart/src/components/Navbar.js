@@ -24,6 +24,10 @@ const Navbar = ({ minimal }) => {
                 </button> }
                 
             </div>
+
+            {showAcc && (
+                <Account setShowAcc={setShowAcc}/>
+            )}
         
         </nav>
 

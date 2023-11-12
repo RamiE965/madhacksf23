@@ -9,10 +9,12 @@ const Home = () => {
 
     const navigate = useNavigate();
     const [showAcc, setShowAcc] = useState(false)
+    const authToken = true
+
 
 
     const handleClick = () => {
-        navigate('/search');
+        {authToken ? navigate('/search') : setShowAcc(true)}
     }
 
     return (
@@ -37,8 +39,9 @@ const Home = () => {
             </h2>
             
             <button className="start-button" onClick={handleClick}>
-                Start Saving!
+                {authToken ? 'Start Saving!' : 'Sign Up!'}
             </button>
+
 
 
         </div>
