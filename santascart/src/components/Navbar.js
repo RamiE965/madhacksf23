@@ -12,6 +12,7 @@ const Navbar = ({ minimal }) => {
     const [showAcc, setShowAcc] = useState(false)
     const [searchTerm, setSearchTerm] = useState('');
     const [searchResults, setSearchResults] = useState(data);
+    const [authToken, setAuthToken] = useState(true)
 
     const handleSearch = event => {
         const term = event.target.value;
@@ -26,7 +27,7 @@ const Navbar = ({ minimal }) => {
         navigate('/');
     }
     const handleClick = () => {
-        setShowAcc(true)
+        {authToken ? setAuthToken((prevAuthToken) => !prevAuthToken) : setShowAcc(true)}
     }
 
     return (
@@ -51,7 +52,7 @@ const Navbar = ({ minimal }) => {
 
             <div className='button-container'>
                 {!minimal && <button className="nav-button" onClick={handleClick}>
-                    Account
+                    {authToken ? 'Logout' : 'Account'}
                 </button>}
             </div>
 
