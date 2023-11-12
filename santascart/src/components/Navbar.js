@@ -19,9 +19,10 @@ const Navbar = ({ minimal }) => {
             </div>
 
             <div className='button-container'>
-                <button className="nav-button" onClick={handleClick}>
+               {!minimal && <button className="nav-button" onClick={handleClick}>
                     Account
-                </button>
+                </button> }
+                
             </div>
         
         </nav>
