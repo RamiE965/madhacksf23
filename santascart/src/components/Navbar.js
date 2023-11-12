@@ -1,7 +1,16 @@
+import { useState } from 'react'
+import Account from "../components/Account"
 import colored from '../images/colored-sc.png'
 import white from '../images/white-sc.png'
 
-const Navbar = ({ minimal, setShow, show, setSignUp }) => {
+
+const Navbar = ({ minimal }) => {
+
+    const [showAcc, setShowAcc] = useState(false)
+
+    const handleClick = () => {
+        setShowAcc(true)
+    }
 
     return (
         <nav>
@@ -10,9 +19,11 @@ const Navbar = ({ minimal, setShow, show, setSignUp }) => {
             </div>
 
             <div className='button-container'>
-            <button className="nav-button">LogIn</button>
-            <button className="nav-button">Create Account</button>
+                <button className="nav-button" onClick={handleClick}>
+                    Account
+                </button>
             </div>
+        
         </nav>
 
     )
