@@ -2,11 +2,11 @@ from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from django.core.mail import send_mail
 from django.conf import settings
+from django.views.decorators.csrf import csrf_exempt
 import os
 import sys
 import requests
 import json
-
 
 # ## TEMP:
 # # When creating new alerts based on front-end info
@@ -20,46 +20,42 @@ import json
 # check_price_drop_task(item_id, user_defined_price, user_email)
 
 # Create your views here.
+@csrf_exempt
 def query(request):
     # variables for the search query
-    userInput = ""
     # minPrice, maxPrice = 0, 0
     # maxItems = 0
     # category = ""
     if request.method == "POST":
-        form = request
-        print(form)
-    
-    # set up the request parameters
-    params = {
-    'api_key': os.environ.get('TARGETAPI'),
-    'type': 'search',
-    'search_term': userInput,
-    'sort_by': 'best_match'
-    }
+        data = json.loads(request.body)
+        input = data.get('input')
 
-    # make the http GET request to RedCircle API
-    api_result = requests.get('https://api.redcircleapi.com/request', params)
-    print("REQUEST INFO:", api_result.json()["request_info"])
-    
-    # dictionary to return after search to be sent to front end
-    results = []
-    index = 0
-
-    # return the JSON response from RedCircle API
-    for item in api_result.json()["search_results"]:
-        item_data = {
-            "Name": item["product"]["title"],
-            "Price": item["offers"]["primary"]["price"],
-            "Image": item["product"]["main_image"],
-            "TCIN ": item["product"]["tcin"]
+        # Set up the request parameters
+        params = {
+            'api_key': os.environ.get('TARGETAPI'),
+            'type': 'search',
+            'search_term': input,
+            'sort_by': 'best_match'
         }
-        results.append(item_data)
-        index+=1
-        if index == 10:
-            break
-    
-    return JsonResponse(results, safe=False) 
+
+        # Make the HTTP GET request to RedCircle API
+        api_result = requests.get('https://api.redcircleapi.com/request', params)
+        print("REQUEST INFO:", api_result.json()["request_info"])
+        
+        # Dictionary to return after search to be sent to front end
+        results = []
+        for index, item in enumerate(api_result.json()["search_results"]):
+            if index == 10:
+                break
+            item_data = {
+                "Name": item["product"]["title"],
+                "Price": item["offers"]["primary"]["price"],
+                "Image": item["product"]["main_image"],
+                "TCIN": item["product"]["tcin"]
+            }
+            results.append(item_data)
+
+        return JsonResponse(results, safe=False)
 
 def send_alert_email(user_email, product_name, product_price):
     try:
@@ -79,9 +75,3 @@ def test(request):
     except Exception as e:
         print(f"Failed to send email: {e}")
         return HttpResponse(f"Failed to send email: {e}")
-        
-   
-
-
-
-

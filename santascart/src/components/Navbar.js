@@ -5,6 +5,7 @@ import white from '../images/white-sc.png'
 import { FaSearch } from 'react-icons/fa'
 import data from '../data/data.json'
 import { useNavigate } from 'react-router-dom'
+import ProductList from './ProductList'
 
 const Navbar = ({ minimal }) => {
 
@@ -14,15 +15,33 @@ const Navbar = ({ minimal }) => {
     const [searchResults, setSearchResults] = useState(data);
     const [authToken, setAuthToken] = useState(true)
 
-    const handleSearch = event => {
+    const fetchData = async (term) => {
+        try {
+            const requestOptions = {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ input: term })
+            };
+
+            const response = await fetch('http://127.0.0.1:8000/query/', requestOptions);
+            const data = await response.json();
+
+            console.log('Success:', data);
+            setSearchResults(data);
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    };
+
+    const handleSearch = (event) => {
         const term = event.target.value;
         setSearchTerm(term);
 
-        const results = data.filter(item =>
-            item['Name'].toLowerCase().includes(term.toLowerCase())
-        );
-        setSearchResults(results);
+        if (event.key === 'Enter') {
+            fetchData(term);
+        }
     };
+    
     const navigateHome = () => {
         navigate('/');
     }
@@ -31,6 +50,7 @@ const Navbar = ({ minimal }) => {
     }
 
     return (
+        <div>
         <nav>
             <div className="logo-container">
             <button className="logo-container" onClick={navigateHome}>
@@ -45,6 +65,7 @@ const Navbar = ({ minimal }) => {
                     type="text"
                     placeholder="Search... " 
                     value={searchTerm}
+                    onKeyPress={handleSearch}
                     onChange={handleSearch}
                 />}
 
@@ -59,11 +80,11 @@ const Navbar = ({ minimal }) => {
             {showAcc && (
                 <Account setShowAcc={setShowAcc}/>
             )}
-        
+
         </nav>
-
+        {minimal && (<ProductList data={searchResults} />)}
+        </div>
     )
-
 }
 
 export default Navbar

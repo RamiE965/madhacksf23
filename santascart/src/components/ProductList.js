@@ -1,33 +1,24 @@
-import data from '../data/data.json'
+import React from 'react';
 
-const ProductList = () => {
-    
-
+const ProductList = ({ data }) => {
     return (
-      <div>
-        {
-            data.map( data => {
-                return (
-                    <div className='card-container'>
-                        <div className='card-img-container'>
-                        <img className="card-img" src={ data.Image }/>
-                        </div>
-                        <div className='card-price'>
-                        ${ data.Price }
-                        </div>
-                        <div className='card-name'>
-                        { data.Name }
-                        </div>
-                        <button className='price-alert'>Get Notified</button>
+        <div>
+            {data && data.map((item, index) => (
+                <div className='card-container' key={index}>
+                    <div className='card-img-container'>
+                        <img className="card-img" src={item.Image} alt={item.Name} />
                     </div>
-                    
-                )
-            })
-        }
-    
-        
-      </div>
-    )
+                    <div className='card-price'>
+                        ${item.Price}
+                    </div>
+                    <div className='card-name'>
+                        {item.Name}
+                    </div>
+                    <button className='price-alert'>Get Notified</button>
+                </div>
+            ))}
+        </div>
+    );
 }
 
-export default ProductList
+export default ProductList;
